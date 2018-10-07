@@ -5,19 +5,20 @@
     android:background="@drawable/generalbg"
     android:layout_height="match_parent">
 <ImageView
-    android:layout_width="70dp"
+    android:layout_width="90dp"
     android:src="@drawable/icon"
     android:padding="5dp"
     android:layout_weight="1"
-    android:layout_height="70dp"
+    android:layout_height="100dp"
     android:layout_gravity="start"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="2"
-        android:padding="5dp">
+        android:layout_weight="3"
+        android:paddingTop="14dp"
+        android:layout_marginLeft="6dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,17 +34,39 @@
             android:id="@+id/priceText"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="7dp"
+            android:paddingTop="10dp"
             android:text="Price : (x rs)"
             android:textAlignment="center" />
     </LinearLayout>
-    <NumberPicker
-        android:layout_gravity="end"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_width="50dp"
-        android:background="#fff"
-        android:backgroundTint="#fff"
-        android:layout_height="70dp">
+        android:orientation="vertical">
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:onClick="increment"
+            android:text="+" />
 
-    </NumberPicker>
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textAlignment="center"
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:onClick="decrement"
+            android:text="-" />
+
+
+
+    </LinearLayout>
+
 </LinearLayout>
