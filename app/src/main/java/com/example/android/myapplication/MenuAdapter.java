@@ -25,11 +25,11 @@ public class MenuAdapter extends ArrayAdapter {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_single, parent, false);
         }
 
-            TextView NameView =  convertView.findViewById(R.id.nameText);
+        TextView NameView =  convertView.findViewById(R.id.nameText);
         assert itemclass != null;
         NameView.setText(itemclass.Name);
 
-        TextView NumberView =  convertView.findViewById(R.id.priceText);
+        TextView NumberView = convertView.findViewById(R.id.priceText);
         NumberView.setText(itemclass.price+" ");
         return convertView;
     }
