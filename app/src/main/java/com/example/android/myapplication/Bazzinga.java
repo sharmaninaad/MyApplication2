@@ -28,7 +28,7 @@ public class Bazzinga extends AppCompatActivity {
                 listView.setAdapter(menuAdapter);
                 break;
         }
-       
+
 
     }
 }

@@ -10,14 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CategoryAdapter extends ArrayAdapter {
-    public CategoryAdapter(@NonNull Context context, int resource, @NonNull Object[] objects) {
+    CategoryAdapter(@NonNull Context context, int resource, @NonNull Object[] objects) {
         super(context, 0, objects);
     }
+    @NonNull
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Category category = (Category) getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_single, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.category_single, parent, false);
         }
 
 

@@ -1,15 +1,19 @@
 package com.example.android.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class Bazzinga_category extends AppCompatActivity {
-
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bazzinga_category);
+        intent=new Intent(Bazzinga_category.this,Bazzinga.class);
         Category[] category_bazzinga = {
                 new Category("Mocktail",R.drawable.cocktail),
                 new Category("Shakes",R.drawable.shakes),
@@ -27,5 +31,13 @@ public class Bazzinga_category extends AppCompatActivity {
         ListView baz_list=findViewById(R.id.list_baz_category);
         CategoryAdapter categoryAdapter=new CategoryAdapter(this,0,category_bazzinga);
         baz_list.setAdapter(categoryAdapter);
+
+        baz_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               intent.putExtra("tag",i);
+               startActivity(intent);
+            }
+        });
     }
 }
